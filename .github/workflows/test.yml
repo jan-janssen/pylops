@@ -15,5 +15,4 @@ jobs:
       with:
         python-version: '3.14'
         miniforge-version: latest
-        condarc-file: .condarc
         environment-file: environment.yml
