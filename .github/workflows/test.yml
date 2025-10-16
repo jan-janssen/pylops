@@ -1,0 +1,19 @@
+name: Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  minimal:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup Mambaforge
+      uses: conda-incubator/setup-miniconda@v3
+      with:
+        python-version: '3.14'
+        miniforge-version: latest
+        condarc-file: .condarc
+        environment-file: environment.yml
